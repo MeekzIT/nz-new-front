@@ -1,5 +1,6 @@
 import { Footer } from "@/components/Layout/Footer/Footer";
 import Header from "@/components/Layout/Header/Header";
+import ProjectDetailsPags from "@/components/ProjectsPage/ProjectDetails/ProjectDetails";
 
 export default async function ProjectsDetails({ params }: any) {
   const resolvedParams = await params;
@@ -13,7 +14,9 @@ export default async function ProjectsDetails({ params }: any) {
       }}
     >
       <Header />
-      <main style={{ flex: "1", textAlign: "center" }}>projects {id}</main>
+      <main style={{ flex: "1", textAlign: "center" }}>
+        <ProjectDetailsPags id={id} />
+      </main>
       <Footer />
     </div>
   );

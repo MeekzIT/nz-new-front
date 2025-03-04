@@ -3,7 +3,7 @@ import CirculeButtonNumber from "@/components/ui/CirculeButtonNumber/CirculeButt
 import { foolNumbers } from "./constants";
 import Link from "next/link";
 import TooltipPolygon from "@/components/ui/TooltipPolygon/TooltipPolygon";
-import { HomeSchemas } from "@/shared/home-schemas";
+import { HomeSchemas } from "@/shared/schemas";
 
 const SchemaPage = async ({ id }: { id: string }) => {
   const floorData = await HomeSchemas.homeSchemas(id);
