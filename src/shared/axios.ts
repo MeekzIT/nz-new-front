@@ -1,10 +1,11 @@
 import axios from "axios";
 
-let axiosInstance = axios.create({
+const axiosInstance = axios.create({
   responseType: "json",
   headers: {
     "content-type": "application/json",
   },
+  baseURL: process.env.NEXT_PUBLIC_APP_URL, // Использование переменной окружения
 });
 
 export const setupAxios = () => {

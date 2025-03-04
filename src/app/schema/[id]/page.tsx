@@ -1,9 +1,12 @@
 import { Footer } from "@/components/Layout/Footer/Footer";
 import Header from "@/components/Layout/Header/Header";
+import SchemaPage from "@/components/Schema/Schema";
 
-export default async function ProjectsDetails({ params }: any) {
+// Убедитесь, что этот компонент корректно работает с асинхронными данными
+export default async function ProjectsDetails({ params }: { params: any }) {
   const resolvedParams = await params;
   const { id } = resolvedParams;
+
   return (
     <div
       style={{
@@ -13,7 +16,9 @@ export default async function ProjectsDetails({ params }: any) {
       }}
     >
       <Header />
-      <main style={{ flex: "1", textAlign: "center" }}>shechema {id}</main>
+      <main style={{ flex: "1", textAlign: "center" }}>
+        <SchemaPage id={id} />
+      </main>
       <Footer />
     </div>
   );
