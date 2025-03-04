@@ -1,14 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 const useIsMobile = (maxWidth = 768) => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= maxWidth);
+  const [isMobile, setIsMobile] = useState(false); // Начальное значение без `window`
 
   useEffect(() => {
+    if (typeof window === "undefined") return; // Проверка на серверный рендеринг
+
     const mediaQuery = window.matchMedia(`(max-width: ${maxWidth}px)`);
     const handleResize = () => setIsMobile(mediaQuery.matches);
 
-    mediaQuery.addEventListener('change', handleResize);
-    return () => mediaQuery.removeEventListener('change', handleResize);
+    setIsMobile(mediaQuery.matches); // Установить значение при монтировании
+
+    mediaQuery.addEventListener("change", handleResize);
+    return () => mediaQuery.removeEventListener("change", handleResize);
   }, [maxWidth]);
 
   return isMobile;
