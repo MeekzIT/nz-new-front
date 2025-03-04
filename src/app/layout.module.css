@@ -1,0 +1,46 @@
+.body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.body a {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+.body h3 {
+  font-size: 24px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.body h3 {
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 300;
+}
+
+.body a {
+  color: white;
+  font-size: 24px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: white;
+  transition: 0.3s all;
+  cursor: pointer;
+}
+
+.body a:hover {
+  color: #08412e;
+  font-size: 24px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.3s all;
+}
