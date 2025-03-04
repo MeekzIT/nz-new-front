@@ -1,3 +1,4 @@
+import HomePage from "@/components/HomePage/HomePage";
 import { Footer } from "@/components/Layout/Footer/Footer";
 import Header from "@/components/Layout/Header/Header";
 
@@ -11,7 +12,9 @@ export default function ServerComponent() {
       }}
     >
       <Header />
-      <main style={{ flex: "1", textAlign: "center" }}>asdasd 21112234234</main>
+      <main style={{ flex: "1", textAlign: "center" }}>
+        <HomePage />
+      </main>
       <Footer />
     </div>
   );

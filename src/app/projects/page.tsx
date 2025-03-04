@@ -1,5 +1,6 @@
 import { Footer } from "@/components/Layout/Footer/Footer";
 import Header from "@/components/Layout/Header/Header";
+import ProjectsPage from "@/components/ProjectsPage/ProjectsPage";
 
 export default function Projects() {
   return (
@@ -11,7 +12,9 @@ export default function Projects() {
       }}
     >
       <Header />
-      <main style={{ flex: "1", textAlign: "center" }}>ProjectsPage</main>
+      <main style={{ flex: "1", textAlign: "center" }}>
+        <ProjectsPage />
+      </main>
       <Footer />
     </div>
   );
