@@ -2,7 +2,7 @@ import AboutUs from "@/components/AboutUs/AboutUs";
 import Footer from "@/components/Layout/Footer/Footer";
 import Header from "@/components/Layout/Header/Header";
 
-const AboutUsPage = ({ data }: { data: { message: string } }) => {
+const AboutUsPage = () => {
   return (
     <div
       style={{

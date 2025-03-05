@@ -3,9 +3,9 @@ const nextConfig = {
   images: {
     domains: ["back.nurazyanconstruction.am", "res.cloudinary.com"],
   },
-  experimental: {
-    concurrentFeatures: true,
-  },
+  // experimental: {
+  //   concurrentFeatures: true,
+  // },
   sassOptions: {
     additionalData: `@import "src/app/styles/mixins.scss";`,
   },

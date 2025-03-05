@@ -1,5 +1,5 @@
-import { ProjectData } from "@/shared/projectsService"
+import { ProjectData } from "@/shared/api/projectsService.api";
 
 export type DetailsBlockType = {
-    data: ProjectData
-}
+  data: ProjectData;
+};
