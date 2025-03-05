@@ -6,11 +6,12 @@ import GoogleMap from "./Map/Map";
 import AboutUs from "./AboutUs/AboutUs";
 import AboutUsTitle from "./AboutUs/AboutTitle";
 import HomeSliderComponent from "./SliderComponent/SliderComponent";
+import HomeFirstSLider from "./HomeFirstSLider/HomeFirstSLider";
 
 const HomePage = () => {
   return (
     <div className={styles.root}>
-      Home Page
+      <HomeFirstSLider />
       <div className={styles.AboutUsTitle}>
         <AboutUsTitle />
       </div>

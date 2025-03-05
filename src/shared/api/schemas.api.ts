@@ -1,4 +1,5 @@
 import axiosInstance from "../utils/axios";
+import { HomeFirstSliderTypes } from "./types/homeFirstSliderTypes";
 
 import { IAvailable, IFloor } from "./types/schemas";
 
@@ -23,6 +24,22 @@ export const HomeAvailableSchemas = {
         "/schema/available"
       );
       return response.data || [];
+    } catch (error) {
+      console.error("Ошибка при загрузке схемы:", error);
+      return [];
+    }
+  },
+};
+
+export const HomeFirstSlider = {
+  homeFirstSlider: async (): Promise<HomeFirstSliderTypes[]> => {
+    try {
+      const response = await axiosInstance.get<{
+        sliders: HomeFirstSliderTypes[];
+        success: boolean;
+      }>("/slider");
+
+      return response.data.sliders || [];
     } catch (error) {
       console.error("Ошибка при загрузке схемы:", error);
       return [];

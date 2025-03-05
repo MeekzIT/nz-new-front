@@ -24,10 +24,5 @@
   font-size: 24px;
   line-height: 20px;
   font-weight: 500;
-}
-
-.body h3 {
-  font-size: 18px;
-  line-height: 20px;
-  font-weight: 300;
+  margin: 0;
 }
