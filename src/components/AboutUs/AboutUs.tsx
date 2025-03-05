@@ -1,13 +1,10 @@
 import Image from "next/image";
 import styles from "./AboutUs.module.css";
-import { ProjectsService } from "@/shared/projectsService";
 import DetailsBlock from "../ProjectsPage/ProjectDetails/components/DetailsBlock/DetailsBlock";
-import { AboutUsApi } from "@/shared/about-us-short";
+import { AboutUsApi } from "@/shared/api/aboutUs.api";
 
 const AboutUs = async () => {
   const data = await AboutUsApi.getAboutData();
-
-  console.log(data, "data");
 
   return (
     <div className={styles.container}>

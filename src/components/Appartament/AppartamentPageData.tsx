@@ -4,8 +4,9 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import AppartamentModal from "./AppartmentModal";
 import CustomModal from "@/components/ui/Modal/Modal";
-import { BidRequest, ContactUsService } from "@/shared/contact-us";
+import { ContactUsService } from "@/shared/api/contactUs.api";
 import styles from "./Modal.module.scss";
+import { IBid } from "@/shared/api/types/contactUs";
 
 interface AppartementDatum {
   id: number;
@@ -34,21 +35,17 @@ export const AppartamentPageData = ({
     setOpen(true);
   };
 
-  console.log(data, "asdasd");
-
-  const handleSubmitForm = (data: BidRequest) => {
+  const handleSubmitForm = (data: IBid) => {
     ContactUsService.Bit(data)
       .then((res) => {
         setOpen(false);
         setStatus(true);
         setOpenRet(true);
-        console.log(t("form.success"), res);
       })
       .catch((err) => {
         setOpen(false);
         setStatus(false);
         setOpenRet(true);
-        console.error(t("form.failed"), err);
       });
   };
 

@@ -1,11 +1,10 @@
 import Image from "next/image";
 import styles from "./ProjectDetails.module.css";
-import { ProjectsService } from "@/shared/projectsService";
 import DetailsBlock from "./components/DetailsBlock/DetailsBlock";
+import { ProjectsService } from "@/shared/api/projectsService.api";
 
 const ProjectDetailsPage = async ({ id }: { id: string }) => {
   const data = await ProjectsService.getProjectData(Number(id));
-  console.log(data, "data");
 
   return (
     <div className={styles.container}>

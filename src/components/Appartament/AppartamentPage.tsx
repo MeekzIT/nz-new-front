@@ -1,7 +1,10 @@
-import React from 'react';
-import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slider';
-import { AppartamentPageData } from './AppartamentPageData';
-import { SingleAppartament } from '@/shared/appartement';
+import React from "react";
+import {
+  ReactCompareSlider,
+  ReactCompareSliderImage,
+} from "react-compare-slider";
+import { AppartamentPageData } from "./AppartamentPageData";
+import { SingleAppartament } from "@/shared/api/appartement.api";
 
 export const AppartamentPage = async ({ id }: { id: string }) => {
   const data = await SingleAppartament.getSingle(id);
@@ -11,43 +14,43 @@ export const AppartamentPage = async ({ id }: { id: string }) => {
   return (
     <div
       style={{
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'space-around',
+        width: "100%",
+        display: "flex",
+        justifyContent: "space-around",
       }}
     >
-      <div style={{ width: '50%', height: '100%' }}>
+      <div style={{ width: "50%", height: "100%" }}>
         <ReactCompareSlider
           itemOne={
             <ReactCompareSliderImage
               src={`${process.env.NEXT_PUBLIC_BASE_URL}${data.image_black_white}`}
-              alt='Image one'
+              alt="Image one"
               style={{
-                width: '100%',
-                height: '100%',
+                width: "100%",
+                height: "100%",
               }}
             />
           }
           itemTwo={
             <ReactCompareSliderImage
               src={`${process.env.NEXT_PUBLIC_BASE_URL}${data.image_design}`}
-              alt='Image two'
+              alt="Image two"
               style={{
-                width: '100%',
-                height: '100%',
+                width: "100%",
+                height: "100%",
               }}
             />
           }
-          style={{ width: '100%', height: '50%' }}
+          style={{ width: "100%", height: "50%" }}
         />
       </div>
       <div
         style={{
-          width: '50%',
-          height: '100%',
-          display: 'flex',
-          justifyContent: 'flex-start',
-          alignItems: 'center',
+          width: "50%",
+          height: "100%",
+          display: "flex",
+          justifyContent: "flex-start",
+          alignItems: "center",
         }}
       >
         <AppartamentPageData

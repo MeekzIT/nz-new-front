@@ -1,7 +1,7 @@
 import styles from "./AvailableApartaments.module.css";
 import Image from "next/image";
 import { AvaiableHomesButtonLInk } from "@/components/ui/AvaiableHomesButtonLInk/AvaiableHomesButtonLInk";
-import { HomeAvailableSchemas } from "@/shared/schemas";
+import { HomeAvailableSchemas } from "@/shared/api/schemas.api";
 
 export async function AvailableApartaments() {
   const data = await HomeAvailableSchemas.schemaAvailableHome();

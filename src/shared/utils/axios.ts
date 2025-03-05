@@ -5,7 +5,7 @@ const axiosInstance = axios.create({
   headers: {
     "content-type": "application/json",
   },
-  baseURL: process.env.NEXT_PUBLIC_APP_URL, // Использование переменной окружения
+  baseURL: process.env.NEXT_PUBLIC_APP_URL,
 });
 
 export const setupAxios = () => {
@@ -16,7 +16,6 @@ export const setupAxios = () => {
     },
     (error) => {
       console.error("axios error: ", error);
-      // toast.error(error.message || "An unexpected error occurred.");
       return Promise.reject(error);
     }
   );

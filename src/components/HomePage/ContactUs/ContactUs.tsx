@@ -12,7 +12,7 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 // import { ContactUsService } from '@/services/about-us.service';
-import { ContactUsService } from "@/shared/contact-us";
+import { ContactUsService } from "@/shared/api/contactUs.api";
 import CustomModal from "@/components/ui/Modal/Modal";
 
 interface FormValues {
@@ -37,17 +37,14 @@ const ContactUsHome = () => {
   const [status, setStatus] = useState(true);
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log(t("form.submitted"), data);
     ContactUsService.aboutUs(data)
       .then((res) => {
         setStatus(true);
         setOpen(true);
-        console.log(t("form.success"), res);
       })
       .catch((err) => {
         setStatus(false);
         setOpen(true);
-        console.error(t("form.failed"), err);
       });
     reset();
   };

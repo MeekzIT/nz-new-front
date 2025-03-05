@@ -3,12 +3,12 @@ import { useForm } from "react-hook-form";
 import { AiOutlineClose } from "react-icons/ai";
 import styles from "./Modal.module.scss";
 import { useTranslation } from "react-i18next";
-import { BidRequest } from "@/shared/contact-us";
+import { IBid } from "@/shared/api/types/contactUs";
 
 interface ModalProps {
   open: boolean;
   setOpen: (value: boolean) => void;
-  handleSubmitForm: (data: BidRequest) => void;
+  handleSubmitForm: (data: IBid) => void;
 }
 
 interface FormData {
@@ -32,7 +32,6 @@ const AppartamentModal: React.FC<ModalProps> = ({
   } = useForm<FormData>();
 
   const onSubmit = (data: FormData) => {
-    console.log("Form Data:", data);
     handleSubmitForm(data);
     reset();
   };

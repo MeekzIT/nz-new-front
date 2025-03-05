@@ -1,9 +1,3 @@
-import axiosInstance from "./axios";
-
-interface ApiResponse {
-  data?: Appartement;
-}
-
 export interface AppartementDatum {
   id: number;
   name: string;
@@ -13,7 +7,7 @@ export interface AppartementDatum {
   updatedAt: string | null;
 }
 
-interface Appartement {
+export interface IAppartement {
   id: number;
   in_stock: boolean;
   price: string;
@@ -27,11 +21,3 @@ interface Appartement {
   updatedAt: string | null;
   AppartementData: AppartementDatum[];
 }
-
-export const SingleAppartament = {
-  async getSingle(id: string): Promise<Appartement> {
-    const response = await axiosInstance.get(`/schema/single/${id}`);
-
-    return (response.data ?? []) as Appartement;
-  },
-};

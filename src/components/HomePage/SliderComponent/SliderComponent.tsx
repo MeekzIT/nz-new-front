@@ -1,11 +1,10 @@
 import React from "react";
-import { Offers } from "@/shared/offers";
 import SliderComponent from "@/components/ui/Slider/Slider";
 import styles from "./SliderComponent.module.scss";
+import { Offers } from "@/shared/api/offers.api";
 
 const HomeSliderComponent = async () => {
   const data = await Offers.getData();
-  console.log(data, "22222");
 
   return (
     <div className={styles.container}>

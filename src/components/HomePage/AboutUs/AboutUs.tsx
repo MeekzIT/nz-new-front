@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./AboutUs.module.scss";
 import AboutUsTitle from "./AboutTitle";
-import { AboutUsApi } from "@/shared/about-us-short";
+import { AboutUsApi } from "@/shared/api/aboutUs.api";
 
 const AboutUs = async () => {
   const data = await AboutUsApi.getData();
