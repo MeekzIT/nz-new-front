@@ -1,4 +1,5 @@
-import { Footer } from "@/components/Layout/Footer/Footer";
+import { AppartamentPage } from "@/components/Appartament/AppartamentPage";
+import Footer from "@/components/Layout/Footer/Footer";
 import Header from "@/components/Layout/Header/Header";
 
 export default async function ProjectsDetails({ params }: any) {
@@ -14,7 +15,9 @@ export default async function ProjectsDetails({ params }: any) {
       }}
     >
       <Header />
-      <main style={{ flex: "1", textAlign: "center" }}>Apartament {id}</main>
+      <main style={{ flex: "1", textAlign: "center" }}>
+        <AppartamentPage id={id} />
+      </main>
       <Footer />
     </div>
   );

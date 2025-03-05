@@ -1,4 +1,5 @@
-import { Footer } from "@/components/Layout/Footer/Footer";
+import ContactUs from "@/components/ContactUs/ContactUs";
+import Footer from "@/components/Layout/Footer/Footer";
 import Header from "@/components/Layout/Header/Header";
 import React from "react";
 
@@ -12,7 +13,9 @@ const ContactUsPage = () => {
       }}
     >
       <Header />
-      <main style={{ flex: "1", textAlign: "center" }}>ContactUsPage </main>
+      <main style={{ flex: "1", textAlign: "center" }}>
+        <ContactUs />
+      </main>
       <Footer />
     </div>
   );

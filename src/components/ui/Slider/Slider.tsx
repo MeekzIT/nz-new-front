@@ -40,7 +40,7 @@ const SliderComponent = ({ data }: SliderComponentProps) => {
                 onClick={() => goToDetailsPage(image.id)}
               >
                 <img
-                  src={image.image_11}
+                  src={image.image_11 || image.image}
                   alt={`Slide ${index}`}
                   className={"slideImage"}
                 />

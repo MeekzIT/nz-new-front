@@ -1,8 +1,7 @@
-import { Footer } from "@/components/Layout/Footer/Footer";
+import Footer from "@/components/Layout/Footer/Footer";
 import Header from "@/components/Layout/Header/Header";
-import React from "react";
 
-const AboutUsPage = () => {
+const AboutUsPage = ({ data }: { data: { message: string } }) => {
   return (
     <div
       style={{
@@ -12,7 +11,9 @@ const AboutUsPage = () => {
       }}
     >
       <Header />
-      <main style={{ flex: "1", textAlign: "center" }}>about us</main>
+      <main style={{ flex: "1", textAlign: "center" }}>
+        <h1>About Us</h1>
+      </main>
       <Footer />
     </div>
   );

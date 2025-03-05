@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import { Logo } from "../Logo/Logo";
+import styles from "./Header.module.scss";
+import { HeaderMobile } from "./HeaderMobile/HeaderMobile";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import useIsMobile from "@/shared/hooks/isMobile";
+import useIsMobile from "./isMobile";
 import useToggle from "@/shared/hooks/useToggle";
-
-import styles from "./Header.module.css";
 
 const Header = () => {
   const pathname = usePathname();
@@ -46,37 +46,39 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      {/* <Container className={styles.container}> */}
-      <Logo onClick={() => (isOpen ? setIsOpen(false) : null)} />
-      <ul className={styles.navigation}>
-        {navigationLinks.map((item) => (
-          <li
-            key={item.name}
-            className={clsx(styles.link, {
-              [styles.active]: pathname === item.href,
-            })}
-          >
-            <Link href={item.href}>{item.name}</Link>
-          </li>
-        ))}
-        <ul>
-          <div className={styles.languageSelectWrapper}>
-            <select
-              className={styles.languageSelect}
-              id="language-select"
-              value={language}
-              onChange={handleLanguageChange}
+      <div className={styles.headerContainer}>
+        {/* <Container className={styles.container}> */}
+        <Logo onClick={() => (isOpen ? setIsOpen(false) : null)} />
+        <ul className={styles.navigation}>
+          {navigationLinks.map((item) => (
+            <li
+              key={item.name}
+              className={clsx(styles.link, {
+                [styles.active]: pathname === item.href,
+              })}
             >
-              <option value="am">🇦🇲</option>
-              <option value="ru">🇷🇺</option>
-              <option value="en">🇬🇧</option>
-            </select>
-          </div>
+              <Link href={item.href}>{item.name}</Link>
+            </li>
+          ))}
+          <ul>
+            <div className={styles.languageSelectWrapper}>
+              <select
+                className={styles.languageSelect}
+                id="language-select"
+                value={language}
+                onChange={handleLanguageChange}
+              >
+                <option value="am">🇦🇲</option>
+                <option value="ru">🇷🇺</option>
+                <option value="en">🇬🇧</option>
+              </select>
+            </div>
+          </ul>
         </ul>
-      </ul>
-      {/* {isMobile ? (
-        <HeaderMobile isOpen={isOpen} setIsOpen={setIsOpen} toggle={toggle} />
-      ) : undefined} */}
+        {isMobile ? (
+          <HeaderMobile isOpen={isOpen} setIsOpen={setIsOpen} toggle={toggle} />
+        ) : undefined}
+      </div>
     </header>
   );
 };

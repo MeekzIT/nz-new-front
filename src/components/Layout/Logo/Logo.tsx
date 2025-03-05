@@ -15,8 +15,7 @@ export const Logo: FC<ILogo> = ({ onClick }) => {
         priority
         alt="logo"
         width={134}
-        height={44}
-        quality={100}
+        height={60}
       />
     </Link>
   );

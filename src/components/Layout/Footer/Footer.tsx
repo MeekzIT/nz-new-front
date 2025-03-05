@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import styles from "./Footer.module.css";
+import styles from "./Footer.module.scss";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 
@@ -17,7 +17,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import Image from "next/image";
 import { Logo } from "../Logo/Logo";
 
-export const Footer = () => {
+const Footer = () => {
   const { t } = useTranslation();
 
   const footerLinks = [
@@ -103,8 +103,8 @@ export const Footer = () => {
             <h3 className={styles.header}>{link.header}</h3>
             <ul className={styles.list}>
               {link.links.map((item) => (
-                <li key={item.id}>
-                  <Link href={item.href}>
+                <li key={item.id} className={styles.listLi}>
+                  <Link href={item.href} className={styles.socialItems}>
                     <h4 className={styles.link}>{item.name}</h4>
                   </Link>
                 </li>
@@ -116,7 +116,11 @@ export const Footer = () => {
           <h3 className={styles.header}>{t("footer.follow_us")}</h3>
           <ul className={styles.listSocial}>
             {socialLinks.map((link) => (
-              <Link key={link.id} href={link.href}>
+              <Link
+                key={link.id}
+                className={styles.socialItems}
+                href={link.href}
+              >
                 {link.icon}
               </Link>
             ))}
@@ -124,23 +128,23 @@ export const Footer = () => {
         </div>
       </div>
       <div className={styles.contacts}>
-        <div className={styles.copyright}>
-          <a
-            href="https://meekz-it.vercel.app/"
-            target="_blank"
-            style={{ height: "30px" }}
-          >
-            <Image
-              src={"/assets/images/meekz-it.svg"}
-              priority
-              alt="logo"
-              width={134}
-              height={44}
-              quality={100}
-            />
-          </a>
-        </div>
+        <a
+          href="https://meekz-it.vercel.app/"
+          target="_blank"
+          style={{ height: "30px" }}
+        >
+          <Image
+            src={"/assets/images/meekz-it.svg"}
+            priority
+            alt="logo"
+            width={134}
+            height={44}
+            quality={100}
+          />
+        </a>
       </div>
     </footer>
   );
 };
+
+export default Footer;
