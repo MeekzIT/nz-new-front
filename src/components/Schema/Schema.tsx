@@ -11,38 +11,49 @@ const SchemaPage = async ({ id }: { id: string }) => {
     <div className={styles.schema}>
       {floorData.length && (
         <>
-          <div style={{ position: "relative", display: "inline-block" }}>
-            <img
-              src={floorData[0].imageUrl}
-              alt={`Floor Plan`}
-              width={4678}
-              height={3308}
-              className={styles.floorImage}
-            />
-            <svg
-              viewBox="0 0 4678 3308"
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-              }}
-            >
-              {floorData[0].Appartements.map(
-                ({ id, coordinates, in_stock, room_count, square_meter }) => (
-                  <Link key={id} href={`/appartement/${id}`}>
-                    <TooltipPolygon
-                      id={id}
-                      coordinates={coordinates}
-                      in_stock={in_stock}
-                      room_count={room_count}
-                      square_meter={square_meter}
-                    />
-                  </Link>
-                )
-              )}
-            </svg>
+          <div className={styles.schemaContainer}>
+            <p className={styles.title}>ԱՆՏԱՌԱՅԻՆ</p>
+            <div className={styles.schemaBlock}>
+              <div style={{ position: "relative", display: "inline-block" }}>
+                <img
+                  src={floorData[0].imageUrl}
+                  alt={`Floor Plan`}
+                  width={floorData[0].width}
+                  height={floorData[0].height}
+                  className={styles.floorImage}
+                />
+                <svg
+                  viewBox={`0 0 ${floorData[0].width} ${floorData[0].height}`}
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                  }}
+                >
+                  {floorData[0].Appartements.map(
+                    ({
+                      id,
+                      coordinates,
+                      in_stock,
+                      room_count,
+                      square_meter,
+                    }) => (
+                      <Link key={id} href={`/appartement/${id}`}>
+                        <TooltipPolygon
+                          id={id}
+                          coordinates={coordinates}
+                          in_stock={in_stock}
+                          room_count={room_count}
+                          square_meter={square_meter}
+                        />
+                      </Link>
+                    )
+                  )}
+                </svg>
+              </div>
+            </div>
           </div>
           <div>
             <div className={styles.floorBlock}>

@@ -32,6 +32,8 @@ export interface IFloor {
   floor: number;
   order: number;
   image_scheme: string;
+  width: string;
+  height: string;
   createdAt: string | null;
   updatedAt: string | null;
   imageUrl: string;

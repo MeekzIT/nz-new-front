@@ -1,9 +1,30 @@
 /* Schema.module.css */
 .schema {
+  width: 90%;
   display: flex;
+  gap: 25px;
+  margin: 90px auto;
   justify-content: center;
-  align-items: center;
-  margin: 88px 133px 0 70px;
+}
+
+.schemaContainer {
+  width: "70%";
+}
+
+.schemaBlock {
+  height: min-content;
+  border-radius: 8px;
+  border: 1px solid #08412e;
+  padding: 10px 25px;
+}
+
+.title {
+  font-family: Bokonique;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 58px;
+  text-align: left;
+  color: #08412e;
 }
 
 .hoverEffect {
@@ -30,13 +51,11 @@
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 3%;
   justify-items: center;
 }
 
 .floorBlock {
-  width: 205px;
-  height: 165px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -44,7 +63,7 @@
   align-items: center;
   background-color: #08412e;
   color: white;
-  padding: 18px 60px;
+  padding: 10px 20px;
   margin-bottom: 28px;
 }
 
@@ -52,8 +71,6 @@
   font-family: Bokonique;
   font-weight: 700;
   font-size: 89px;
-  line-height: 58px;
-  letter-spacing: -2.5%;
   text-align: center;
   margin: 0;
 }
@@ -63,7 +80,6 @@
   font-weight: 700;
   font-size: 28px;
   line-height: 58px;
-  letter-spacing: -2.5%;
   margin: 0;
 }
 
