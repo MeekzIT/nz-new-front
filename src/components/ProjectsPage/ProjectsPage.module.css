@@ -22,24 +22,6 @@
   border-radius: 8px;
 }
 
-.textBlock {
-  width: fit-content;
-}
-
-.title {
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 58px;
-  letter-spacing: -2.5%;
-}
-
-.description {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 32px;
-  letter-spacing: -2.5%;
-}
-
 @media (max-width: 768px) {
   .container {
     display: flex;

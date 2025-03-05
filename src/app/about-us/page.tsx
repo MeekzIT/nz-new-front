@@ -1,3 +1,4 @@
+import AboutUs from "@/components/AboutUs/AboutUs";
 import Footer from "@/components/Layout/Footer/Footer";
 import Header from "@/components/Layout/Header/Header";
 
@@ -12,7 +13,7 @@ const AboutUsPage = ({ data }: { data: { message: string } }) => {
     >
       <Header />
       <main style={{ flex: "1", textAlign: "center" }}>
-        <h1>About Us</h1>
+        <AboutUs />
       </main>
       <Footer />
     </div>

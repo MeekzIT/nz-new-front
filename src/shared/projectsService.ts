@@ -1,10 +1,12 @@
 import axiosInstance from "./axios";
 
-interface ProjectData {
+export interface ProjectData {
   id: number;
   name: string;
   description: string;
   titleAm: string;
+  titleRu: string;
+  titleEn: string;
   textAm_1: string;
   image_11: string;
   image_12: string;

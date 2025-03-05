@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./AboutUs.module.scss";
-import { AboutUsShort } from "@/shared/about-us-short";
 import AboutUsTitle from "./AboutTitle";
+import { AboutUsApi } from "@/shared/about-us-short";
 
 const AboutUs = async () => {
-  const data = await AboutUsShort.getData();
+  const data = await AboutUsApi.getData();
 
   return (
     <div className={styles.root}>

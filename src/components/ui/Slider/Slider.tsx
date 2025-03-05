@@ -28,7 +28,10 @@ const SliderComponent = ({ data }: SliderComponentProps) => {
             slidesPerView: 1.5,
           },
           768: {
-            slidesPerView: data.length >= 3 ? 2.5 : data.length,
+            slidesPerView:  1.5,
+          },
+          1024: {
+            slidesPerView: 2.5,
           },
         }}
       >

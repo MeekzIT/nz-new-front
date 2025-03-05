@@ -39,27 +39,31 @@
     "address": "8502 Preston Rd. Inglewood, Maine 98380",
     "facebook": "FB"
   },
-  "appartament":{
-    "floorId":"Floor",
-    "square_meter":"Square Meter",
+  "appartament": {
+    "floorId": "Floor",
+    "square_meter": "Square Meter",
     "value": "{{value}} m²",
-    "room_count":"Room Count",
-    "hallway_i18":"Hallway",
-    "kitchen_i18":"Kitchen",
-    "living_room_i18":"Living Room",
-    "bedroom_i18":"Bedroom",
-    "bathroom_i18":"Bathroom",
-    "office_i18":"Office",
-    "closet_i18":"Closet",
-    "terasa_i18":"Terasa",
-    "balcony_i18":"Balcony",
-    "order":"Apply now!",
-  "application":"SEND APPLICATION"
+    "room_count": "Room Count",
+    "hallway_i18": "Hallway",
+    "kitchen_i18": "Kitchen",
+    "living_room_i18": "Living Room",
+    "bedroom_i18": "Bedroom",
+    "bathroom_i18": "Bathroom",
+    "office_i18": "Office",
+    "closet_i18": "Closet",
+    "terasa_i18": "Terasa",
+    "balcony_i18": "Balcony",
+    "order": "Apply now!",
+    "application": "SEND APPLICATION"
   },
-  "home":{
-    "home":"Home",
-    "projects":"Projects",
-    "about":"About Us",
-    "contact":"Contact Us"
+  "home": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About Us",
+    "contact": "Contact Us"
+  },
+  "project": {
+    "title": "Projects",
+    "description": "The complex consists of twenty-two above-ground and four underground floors and has a number of amenities."
   }
 }
