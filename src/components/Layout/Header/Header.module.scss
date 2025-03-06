@@ -66,10 +66,10 @@
   appearance: none; /* Removes default dropdown styling */
   -webkit-appearance: none; /* For Safari */
   -moz-appearance: none; /* For Firefox */
-  background-color: #ffffff;
-  border: 2px solid #ddd;
+  background-color: #08412e;
+  border: 2px solid rgb(148, 138, 91);
   border-radius: 8px;
-  padding: 10px 14px;
+  padding: 10px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
@@ -78,7 +78,7 @@
   position: relative;
   width: 110px;
   text-align: center;
-  color: #333;
+  color: wheat;
 }
 
 /* Custom arrow for browsers that support it */
@@ -95,7 +95,7 @@
 .languageSelectWrapper::after {
   content: "▼";
   font-size: 12px;
-  color: #666;
+  color: rgb(148, 138, 91);
   position: absolute;
   right: 12px;
   top: 50%;
@@ -112,12 +112,11 @@
 
 /* Hover & Focus Effects */
 .languageSelect:hover {
-  border-color: #aaa;
+  border-color: white;
 }
 
 .languageSelect:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  border-color: white;
 }
 
 /* Styling for dropdown options */

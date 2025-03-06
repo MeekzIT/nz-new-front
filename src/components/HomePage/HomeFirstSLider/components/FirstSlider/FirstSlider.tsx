@@ -5,12 +5,18 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { HomeFirstSliderTypes } from "@/shared/api/homeFirstSliderTypes";
-import Image from "next/image";
 import styles from "./FirstSlider.module.css";
 import clsx from "clsx";
+import { HomeFirstSliderTypes } from "@/shared/api/types/homeFirstSliderTypes";
+import { FaArrowDown } from "react-icons/fa";
+import { useTranslation } from "next-i18next";
 
-const FirstSlider = ({ sliderData }: { sliderData: HomeFirstSliderTypes[] }) => {
+const FirstSlider = ({
+  sliderData,
+}: {
+  sliderData: HomeFirstSliderTypes[];
+}) => {
+  const { t } = useTranslation();
   return (
     <div className={styles.sliderContainer}>
       <Swiper
@@ -18,15 +24,19 @@ const FirstSlider = ({ sliderData }: { sliderData: HomeFirstSliderTypes[] }) => 
         pagination={{ clickable: true }}
         loop
         direction="vertical"
-        className={clsx(styles.swiper, styles.verticalSlider) }
+        className={clsx(styles.swiper, styles.verticalSlider)}
         style={{
-          gap:"0 !important"
+          gap: "0 !important",
         }}
       >
         {sliderData.map((slide) => (
-          <SwiperSlide key={slide.id} className={styles.slide} style={{
-            height:"528px !important"
-          }}>
+          <SwiperSlide
+            key={slide.id}
+            className={styles.slide}
+            style={{
+              height: "528px !important",
+            }}
+          >
             <img
               src={slide.image}
               alt={slide.titleEn}
@@ -39,15 +49,27 @@ const FirstSlider = ({ sliderData }: { sliderData: HomeFirstSliderTypes[] }) => 
           </SwiperSlide>
         ))}
       </Swiper>
-      
+
       <div className={styles.ctaContainer}>
-        <Image
-          src="/assets/images/CTAButton.png"
-          alt="CTA Button"
-          width={100}
-          height={100}
-          className={styles.ctaButton}
-        />
+        <svg width="200" height="200" viewBox="0 0 200 200">
+          <defs>
+            <path
+              id="circlePath"
+              d="M 100, 100 m -80, 0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0"
+            />
+          </defs>
+          <text
+            fontSize="19"
+            letter-spacing="2px"
+            fill="white"
+            fontWeight="bold"
+          >
+            <textPath href="#circlePath" startOffset="50%" textAnchor="middle">
+              {t("home.slider")}
+            </textPath>
+          </text>
+        </svg>
+        <FaArrowDown className={styles.arrowIcon} />
       </div>
     </div>
   );

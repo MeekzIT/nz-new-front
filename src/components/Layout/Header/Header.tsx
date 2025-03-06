@@ -47,7 +47,6 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.headerContainer}>
-        {/* <Container className={styles.container}> */}
         <Logo onClick={() => (isOpen ? setIsOpen(false) : null)} />
         <ul className={styles.navigation}>
           {navigationLinks.map((item) => (
@@ -68,9 +67,9 @@ const Header = () => {
                 value={language}
                 onChange={handleLanguageChange}
               >
-                <option value="am">🇦🇲</option>
-                <option value="ru">🇷🇺</option>
-                <option value="en">🇬🇧</option>
+                <option value="am">🇦🇲 հայ</option>
+                <option value="ru">🇷🇺 ру</option>
+                <option value="en">🇬🇧 en</option>
               </select>
             </div>
           </ul>

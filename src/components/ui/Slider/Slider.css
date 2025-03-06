@@ -6,7 +6,7 @@
 .swiper {
   height: 497px;
   position: unset;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
 }
 
 .swiper-wrapper {

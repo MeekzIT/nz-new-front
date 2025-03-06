@@ -7,7 +7,6 @@ import CustomModal from "@/components/ui/Modal/Modal";
 import { ContactUsService } from "@/shared/api/contactUs.api";
 import styles from "./Modal.module.scss";
 import { IBid } from "@/shared/api/types/contactUs";
-
 interface AppartementDatum {
   id: number;
   name: string;
@@ -56,8 +55,8 @@ export const AppartamentPageData = ({
         display: "flex",
         justifyContent: "space-around",
         flexDirection: "column",
-        gap: "15px",
-        padding: "50px",
+        gap: "20px",
+        padding: "25px",
       }}
     >
       <div
@@ -67,8 +66,10 @@ export const AppartamentPageData = ({
           justifyContent: "space-between",
         }}
       >
-        <h3>{t("appartament.floorId")}</h3>
-        <h3>{floorId}</h3>
+        <p className={styles.appartamentDataTitles}>
+          {t("appartament.floorId")}
+        </p>
+        <p className={styles.appartamentDataValues}>{floorId}</p>
       </div>
       <div
         style={{
@@ -77,8 +78,12 @@ export const AppartamentPageData = ({
           justifyContent: "space-between",
         }}
       >
-        <h3>{t("appartament.square_meter")}</h3>
-        <h3>{t("appartament.value", { value: square_meter })}</h3>
+        <p className={styles.appartamentDataTitles}>
+          {t("appartament.square_meter")}
+        </p>
+        <p className={styles.appartamentDataValues}>
+          {t("appartament.value", { value: square_meter })}
+        </p>
       </div>
       {data.map((i) => {
         return (
@@ -90,8 +95,12 @@ export const AppartamentPageData = ({
               justifyContent: "space-between",
             }}
           >
-            <h2>{t(`appartament.${i.name}`)}</h2>
-            <h3>{t("appartament.value", { value: i.value })}</h3>
+            <p className={styles.appartamentDataValues}>
+              {t(`appartament.${i.name}`)}
+            </p>
+            <p className={styles.appartamentDataValues}>
+              {t("appartament.value", { value: i.value })}
+            </p>
           </div>
         );
       })}

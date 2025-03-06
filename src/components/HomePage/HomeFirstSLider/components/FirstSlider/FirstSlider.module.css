@@ -49,13 +49,51 @@
 .subtitle {
   font-size: 1.25rem;
 }
-
+/* 
 .ctaContainer {
   position: absolute;
-  bottom: -80px;
+  bottom: -50px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
+
+  width: 8vw;
+  height: 8vw;
+  max-width: 200px;
+  max-height: 200px;
+  min-width: 40px;
+  min-height: 40px;
+  background: #08412e;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  color: white;
+} */
+
+.ctaContainer {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+
+  width: 150px;
+  height: 150px;
+  background: #08412e;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrowIcon {
+  position: absolute;
+  color: white;
+  font-size: 24px;
 }
 
 .ctaButton {
