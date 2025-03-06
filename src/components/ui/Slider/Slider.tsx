@@ -8,7 +8,11 @@ import "swiper/css/navigation";
 import "./Slider.css";
 import { SliderComponentProps } from "./types";
 
-const SliderComponent = ({ data }: SliderComponentProps) => {
+interface ISliderComponent {
+  data: any;
+  isRedirectable: boolean;
+}
+const SliderComponent = ({ data, isRedirectable = true }: ISliderComponent) => {
   const router = useRouter();
 
   const goToDetailsPage = (id: number) => {
@@ -28,7 +32,7 @@ const SliderComponent = ({ data }: SliderComponentProps) => {
             slidesPerView: 1.5,
           },
           768: {
-            slidesPerView:  1.5,
+            slidesPerView: 1.5,
           },
           1024: {
             slidesPerView: 2.5,
@@ -40,7 +44,7 @@ const SliderComponent = ({ data }: SliderComponentProps) => {
             return (
               <SwiperSlide
                 key={index}
-                onClick={() => goToDetailsPage(image.id)}
+                onClick={() => isRedirectable && goToDetailsPage(image.id)}
               >
                 <img
                   src={image.image_11 || image.image}

@@ -7,16 +7,9 @@ export default async function ProjectsDetails({ params }: any) {
   const { id } = resolvedParams;
   return (
     <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        minHeight: "100vh",
-      }}
     >
       <Header />
-      <main style={{ flex: "1", textAlign: "center" }}>
-        <ProjectDetailsPags id={id} />
-      </main>
+      <ProjectDetailsPags id={id} />
       <Footer />
     </div>
   );

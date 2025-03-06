@@ -20,7 +20,7 @@ const HomeSliderComponent = async () => {
           </p>
         </div>
       </div>
-      <SliderComponent data={data} />
+      <SliderComponent data={data} isRedirectable={false} />
     </div>
   );
 };

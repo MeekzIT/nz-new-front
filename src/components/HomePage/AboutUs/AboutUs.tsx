@@ -1,29 +1,31 @@
+'use client'
+
 import React from "react";
-import styles from "./AboutUs.module.scss";
 import AboutUsTitle from "./AboutTitle";
-import { AboutUsApi } from "@/shared/api/aboutUs.api";
+import ImagesBlock from "@/components/ui/ImagesBlock/ImagesBlock";
+import styles from "./AboutUs.module.css";
+import { useHookI18HomeAbout } from "./useHookI18HomeAbout";
+import { IAboutUsShort } from "@/shared/api/types/about";
 
-const AboutUs = async () => {
-  const data = await AboutUsApi.getData();
+interface IHomeAboutUs {
+  aboutUsData: IAboutUsShort
+}
 
+const AboutUs = ({ aboutUsData }: IHomeAboutUs) => {
+  const { description1, } = useHookI18HomeAbout(aboutUsData)
   return (
-    <div className={styles.root}>
-      <div className={styles.aboutUsFirst}>
-        <div className={styles.titleWrapper}>
-          <div className={styles.description}>{data[0].textAm}</div>
+    <div className={styles.container}>
+      <div className={styles.block}>
+        <div>
+          <p className={styles.title}><AboutUsTitle /></p>
+          <div className={styles.description}>{description1}</div>
         </div>
-        <div className={styles.images}>
-          <img
-            src={data[0].image_1}
-            alt="Main Image"
-            className={styles.mainImage}
-          />
-          <div className={styles.smallImages}>
-            <img src={data[0].image_2} alt="Image 12" />
-            <img src={data[0].image_3} alt="Image 13" />
-            <img src={data[0].image_4} alt="Image 14" />
-          </div>
-        </div>
+        <ImagesBlock
+          imageData={[aboutUsData.image_1,
+          aboutUsData.image_2,
+          aboutUsData.image_3,
+          aboutUsData.image_4]}
+        />
       </div>
     </div>
   );

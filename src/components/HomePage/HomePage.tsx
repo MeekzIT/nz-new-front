@@ -7,15 +7,15 @@ import AboutUs from "./AboutUs/AboutUs";
 import AboutUsTitle from "./AboutUs/AboutTitle";
 import HomeSliderComponent from "./SliderComponent/SliderComponent";
 import HomeFirstSLider from "./HomeFirstSLider/HomeFirstSLider";
+import { AboutUsApi } from "@/shared/api/aboutUs.api";
 
-const HomePage = () => {
+export default async function HomePage() {
+  const aboutUsData = await AboutUsApi.getData();
+
   return (
     <div className={styles.root}>
       <HomeFirstSLider />
-      <div className={styles.AboutUsTitle}>
-        <AboutUsTitle />
-      </div>
-      <AboutUs />
+      <AboutUs aboutUsData={aboutUsData}/>
       <AvailableApartaments />
       <HomeSliderComponent />
       <GoogleMap />
@@ -24,4 +24,3 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
